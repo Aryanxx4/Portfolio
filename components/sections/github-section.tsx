@@ -1,8 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Users, BookOpen } from "lucide-react";
 import { GitHubIcon } from "@/components/icons";
-import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button-link";
 import { ScrollReveal } from "@/components/motion";
 import { SectionHeading } from "@/components/section-heading";
 import {
@@ -69,20 +68,16 @@ export async function GitHubSection({ site }: GitHubSectionProps) {
                     </div>
                   </div>
                 </div>
-                <Button
+                <ButtonLink
                   className="mt-6"
+                  href={site.socials.github}
                   variant="outline"
-                  render={
-                    <Link
-                      href={site.socials.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    />
-                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <GitHubIcon data-icon="inline-start" className="size-4" />
                   View Profile
-                </Button>
+                </ButtonLink>
               </div>
             </ScrollReveal>
 
@@ -117,19 +112,15 @@ export async function GitHubSection({ site }: GitHubSectionProps) {
             <p className="text-muted-foreground">
               Unable to load GitHub data right now.
             </p>
-            <Button
+            <ButtonLink
               className="mt-4"
-              render={
-                <Link
-                  href={site.socials.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                />
-              }
+              href={site.socials.github}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <GitHubIcon data-icon="inline-start" className="size-4" />
               View on GitHub
-            </Button>
+            </ButtonLink>
           </div>
         )}
       </div>

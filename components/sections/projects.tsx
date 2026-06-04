@@ -1,9 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { GitHubIcon } from "@/components/icons";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button-link";
 import { ScrollReveal } from "@/components/motion";
 import { SectionHeading } from "@/components/section-heading";
 import type { Project } from "@/lib/content";
@@ -81,34 +80,26 @@ export function Projects({ projects, githubUrl }: ProjectsProps) {
                     <TechRow label="Database" items={project.tech.database} />
                   </div>
                   <div className="mt-6 flex flex-wrap gap-2">
-                    <Button
+                    <ButtonLink
+                      href={project.github}
                       variant="outline"
                       size="sm"
-                      render={
-                        <Link
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        />
-                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <GitHubIcon data-icon="inline-start" className="size-4" />
                       Code
-                    </Button>
+                    </ButtonLink>
                     {project.liveUrl ? (
-                      <Button
+                      <ButtonLink
+                        href={project.liveUrl}
                         size="sm"
-                        render={
-                          <Link
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          />
-                        }
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <ExternalLink data-icon="inline-start" />
                         Live Demo
-                      </Button>
+                      </ButtonLink>
                     ) : null}
                   </div>
                 </div>
@@ -117,19 +108,15 @@ export function Projects({ projects, githubUrl }: ProjectsProps) {
           ))}
         </div>
         <div className="mt-10 text-center">
-          <Button
+          <ButtonLink
+            href={githubUrl}
             variant="ghost"
-            render={
-              <Link
-                href={githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              />
-            }
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <GitHubIcon data-icon="inline-start" className="size-4" />
             More on GitHub
-          </Button>
+          </ButtonLink>
         </div>
       </div>
     </section>

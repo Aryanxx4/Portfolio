@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowDown, FileDown } from "lucide-react";
 import { GitHubIcon } from "@/components/icons";
-import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button-link";
 import { ScrollReveal } from "@/components/motion";
 import type { SiteConfig } from "@/lib/content";
 
@@ -36,38 +36,29 @@ export function Hero({ site }: HeroProps) {
             {site.tagline}
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
-            <Button
-              render={
-                <Link href="#projects" />
-              }
-              size="lg"
-            >
+            <ButtonLink href="#projects" size="lg">
               View Projects
-            </Button>
-            <Button
+            </ButtonLink>
+            <ButtonLink
+              href={site.resumeUrl}
               variant="outline"
               size="lg"
-              render={
-                <Link href={site.resumeUrl} target="_blank" rel="noopener noreferrer" />
-              }
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FileDown data-icon="inline-start" />
               Resume
-            </Button>
-            <Button
+            </ButtonLink>
+            <ButtonLink
+              href={site.socials.github}
               variant="ghost"
               size="lg"
-              render={
-                <Link
-                  href={site.socials.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                />
-              }
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <GitHubIcon data-icon="inline-start" className="size-4" />
               GitHub
-            </Button>
+            </ButtonLink>
           </div>
         </ScrollReveal>
         <div className="mt-20">

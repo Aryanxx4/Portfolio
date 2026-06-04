@@ -1,7 +1,6 @@
-import Link from "next/link";
 import { Mail, FileDown } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
-import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button-link";
 import { ScrollReveal } from "@/components/motion";
 import { SectionHeading } from "@/components/section-heading";
 import type { SiteConfig } from "@/lib/content";
@@ -30,55 +29,40 @@ export function Contact({ site }: ContactProps) {
               respond within a few days.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button
-                size="lg"
-                render={<Link href={`mailto:${site.email}`} />}
-              >
+              <ButtonLink href={`mailto:${site.email}`} size="lg">
                 <Mail data-icon="inline-start" />
                 Email Me
-              </Button>
-              <Button
+              </ButtonLink>
+              <ButtonLink
+                href={site.socials.linkedin}
                 variant="outline"
                 size="lg"
-                render={
-                  <Link
-                    href={site.socials.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  />
-                }
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <LinkedInIcon data-icon="inline-start" className="size-4" />
                 LinkedIn
-              </Button>
-              <Button
+              </ButtonLink>
+              <ButtonLink
+                href={site.socials.github}
                 variant="outline"
                 size="lg"
-                render={
-                  <Link
-                    href={site.socials.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  />
-                }
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <GitHubIcon data-icon="inline-start" className="size-4" />
                 GitHub
-              </Button>
-              <Button
+              </ButtonLink>
+              <ButtonLink
+                href={site.resumeUrl}
                 variant="ghost"
                 size="lg"
-                render={
-                  <Link
-                    href={site.resumeUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  />
-                }
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <FileDown data-icon="inline-start" />
                 Resume
-              </Button>
+              </ButtonLink>
             </div>
           </div>
         </ScrollReveal>

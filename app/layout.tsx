@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import { getSiteConfig } from "@/lib/content";
 import "./globals.css";
@@ -58,15 +59,21 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`dark ${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
     >
-      <head>
-        <script
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col font-sans"
+      >
+        <Script
+          id="json-ld"
           type="application/ld+json"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </head>
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+        {children}
+      </body>
     </html>
   );
 }
