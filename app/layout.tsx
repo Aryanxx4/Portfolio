@@ -60,11 +60,11 @@ export default async function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`dark ${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
+      className={`site-root dark ${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
     >
       <body
         suppressHydrationWarning
-        className="min-h-full flex flex-col font-sans"
+        className="site-body min-h-full flex flex-col font-sans"
       >
         <Script
           id="json-ld"

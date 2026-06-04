@@ -4,6 +4,7 @@ import { GitHubIcon } from "@/components/icons";
 import { ButtonLink } from "@/components/ui/button-link";
 import { ScrollReveal } from "@/components/motion";
 import { SectionHeading } from "@/components/section-heading";
+import { githubSectionStyles, layoutStyles } from "@/lib/component-styles";
 import {
   fetchGitHubProfile,
   getContributionChartUrl,
@@ -24,9 +25,9 @@ export async function GitHubSection({ site }: GitHubSectionProps) {
     <section
       id="github"
       aria-labelledby="github-heading"
-      className="scroll-mt-20 py-24"
+      className={githubSectionStyles.section}
     >
-      <div className="mx-auto max-w-6xl px-6">
+      <div className={layoutStyles.pageMaxWidth}>
         <ScrollReveal>
           <SectionHeading
             id="github"
@@ -36,89 +37,98 @@ export async function GitHubSection({ site }: GitHubSectionProps) {
         </ScrollReveal>
 
         {profile ? (
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className={githubSectionStyles.statsGrid}>
             <ScrollReveal>
-              <div className="rounded-xl border border-white/10 bg-card/50 p-6">
-                <div className="flex items-start gap-4">
+              <div className={githubSectionStyles.profileCard}>
+                <div className={githubSectionStyles.profileHeader}>
                   <Image
                     src={profile.avatar_url}
                     alt={`${profile.login} avatar`}
                     width={64}
                     height={64}
-                    className="rounded-full"
+                    className={githubSectionStyles.profileAvatar}
                   />
                   <div>
-                    <h3 className="font-semibold text-foreground">
+                    <h3 className={githubSectionStyles.profileUsername}>
                       @{profile.login}
                     </h3>
                     {profile.bio ? (
-                      <p className="mt-2 text-sm text-muted-foreground">
+                      <p className={githubSectionStyles.profileBio}>
                         {profile.bio}
                       </p>
                     ) : null}
-                    <div className="mt-4 flex flex-wrap gap-4 text-sm text-muted-foreground">
+                    <div className={githubSectionStyles.profileStatsRow}>
                       <span className="flex items-center gap-1.5">
-                        <BookOpen className="size-4 text-accent" />
+                        <BookOpen className={githubSectionStyles.profileStatIcon} />
                         {profile.public_repos} repos
                       </span>
                       <span className="flex items-center gap-1.5">
-                        <Users className="size-4 text-accent" />
+                        <Users className={githubSectionStyles.profileStatIcon} />
                         {profile.followers} followers
                       </span>
                     </div>
                   </div>
                 </div>
                 <ButtonLink
-                  className="mt-6"
+                  className={githubSectionStyles.viewProfileButton}
                   href={site.socials.github}
                   variant="outline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <GitHubIcon data-icon="inline-start" className="size-4" />
+                  <GitHubIcon
+                    data-icon="inline-start"
+                    className={githubSectionStyles.githubIconInButton}
+                  />
                   View Profile
                 </ButtonLink>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <div className="overflow-hidden rounded-xl border border-white/10 bg-card/50 p-4">
+              <div className={githubSectionStyles.statsImageCard}>
                 <Image
                   src={statsUrl}
                   alt="GitHub stats"
                   width={400}
                   height={120}
-                  className="h-auto w-full"
+                  className={githubSectionStyles.statsImage}
                   unoptimized
                 />
               </div>
             </ScrollReveal>
 
-            <ScrollReveal className="lg:col-span-2" delay={0.15}>
-              <div className="overflow-hidden rounded-xl border border-white/10 bg-card/50 p-4">
+            <ScrollReveal
+              className={githubSectionStyles.chartCardSpan}
+              delay={0.15}
+            >
+              <div className={githubSectionStyles.statsImageCard}>
                 <Image
                   src={chartUrl}
                   alt="GitHub contribution chart"
                   width={800}
                   height={120}
-                  className="h-auto w-full"
+                  className={githubSectionStyles.statsImage}
                   unoptimized
                 />
               </div>
             </ScrollReveal>
           </div>
         ) : (
-          <div className="rounded-xl border border-white/10 bg-card/50 p-8 text-center">
-            <p className="text-muted-foreground">
+          <div className={githubSectionStyles.fallbackCard}>
+            <p className={githubSectionStyles.fallbackText}>
               Unable to load GitHub data right now.
             </p>
             <ButtonLink
-              className="mt-4"
+              className={githubSectionStyles.fallbackButton}
               href={site.socials.github}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <GitHubIcon data-icon="inline-start" className="size-4" />
+              <GitHubIcon
+                data-icon="inline-start"
+                className={githubSectionStyles.githubIconInButton}
+              />
               View on GitHub
             </ButtonLink>
           </div>

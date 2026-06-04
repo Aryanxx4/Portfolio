@@ -11,6 +11,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { NAV_ITEMS } from "@/lib/constants";
+import { mobileNavStyles } from "@/lib/component-styles";
 import { cn } from "@/lib/utils";
 
 type MobileNavProps = {
@@ -25,18 +26,18 @@ export function MobileNav({ activeSection }: MobileNavProps) {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className={mobileNavStyles.menuTriggerButton}
             aria-label="Open menu"
           />
         }
       >
         <Menu className="size-5" />
       </SheetTrigger>
-      <SheetContent side="right" className="w-72">
+      <SheetContent side="right" className={mobileNavStyles.sheetPanel}>
         <SheetHeader>
           <SheetTitle>Navigation</SheetTitle>
         </SheetHeader>
-        <nav className="mt-6 flex flex-col gap-1" aria-label="Mobile">
+        <nav className={mobileNavStyles.navList} aria-label="Mobile">
           {NAV_ITEMS.map((item) => {
             const sectionId = item.href.replace("#", "");
             const isActive = activeSection === sectionId;
@@ -46,10 +47,10 @@ export function MobileNav({ activeSection }: MobileNavProps) {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "rounded-md px-3 py-2.5 text-sm transition-colors",
+                  mobileNavStyles.navLinkBase,
                   isActive
-                    ? "bg-secondary text-foreground"
-                    : "text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
+                    ? mobileNavStyles.navLinkActive
+                    : mobileNavStyles.navLinkInactive
                 )}
               >
                 {item.label}

@@ -3,6 +3,7 @@ import { GitHubIcon, LinkedInIcon } from "@/components/icons";
 import { ButtonLink } from "@/components/ui/button-link";
 import { ScrollReveal } from "@/components/motion";
 import { SectionHeading } from "@/components/section-heading";
+import { contactStyles, layoutStyles } from "@/lib/component-styles";
 import type { SiteConfig } from "@/lib/content";
 
 type ContactProps = {
@@ -14,21 +15,21 @@ export function Contact({ site }: ContactProps) {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="scroll-mt-20 border-t border-white/10 py-24"
+      className={contactStyles.section}
     >
-      <div className="mx-auto max-w-6xl px-6">
+      <div className={layoutStyles.pageMaxWidth}>
         <ScrollReveal>
           <SectionHeading
             id="contact"
             title="Contact"
             subtitle="Open to internships, collaborations, and full-stack roles."
           />
-          <div className="max-w-xl rounded-xl border border-white/10 bg-card/50 p-8">
-            <p className="text-muted-foreground">
+          <div className={contactStyles.contactCard}>
+            <p className={contactStyles.contactMessage}>
               The fastest way to reach me is via LinkedIn or email. I typically
               respond within a few days.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className={contactStyles.contactButtonRow}>
               <ButtonLink href={`mailto:${site.email}`} size="lg">
                 <Mail data-icon="inline-start" />
                 Email Me
@@ -40,7 +41,10 @@ export function Contact({ site }: ContactProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <LinkedInIcon data-icon="inline-start" className="size-4" />
+                <LinkedInIcon
+                  data-icon="inline-start"
+                  className={contactStyles.socialIconInButton}
+                />
                 LinkedIn
               </ButtonLink>
               <ButtonLink
@@ -50,7 +54,10 @@ export function Contact({ site }: ContactProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <GitHubIcon data-icon="inline-start" className="size-4" />
+                <GitHubIcon
+                  data-icon="inline-start"
+                  className={contactStyles.socialIconInButton}
+                />
                 GitHub
               </ButtonLink>
               <ButtonLink
