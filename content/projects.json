@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "aims",
+    "title": "AIMS",
+    "tagline": "Academic institute management platform",
+    "description": "A complete institute management system for handling student records, exam data, subject mapping, and faculty modules. Built with a modular API layer and a React-based admin experience.",
+    "architecture": "JWT auth + REST API + React dashboard + PostgreSQL",
+    "tech": {
+      "frontend": ["TypeScript", "React"],
+      "backend": ["Node.js", "Express"],
+      "database": ["PostgreSQL"]
+    },
+    "github": "https://github.com/Aryanxx4/AIMS-",
+    "liveUrl": null,
+    "featured": true,
+    "image": "/projects/aims.svg"
+  },
+  {
+    "slug": "safefolio",
+    "title": "Safefolio",
+    "tagline": "Modern portfolio & safety-focused web app",
+    "description": "A TypeScript full-stack application deployed to production on Vercel, demonstrating modern frontend patterns and a polished user experience.",
+    "architecture": "Next.js-style app architecture with TypeScript end-to-end",
+    "tech": {
+      "frontend": ["TypeScript", "React"],
+      "backend": ["Node.js"],
+      "database": []
+    },
+    "github": "https://github.com/Aryanxx4/Safefolio",
+    "liveUrl": "https://safefolio-tau.vercel.app",
+    "featured": true,
+    "image": "/projects/safefolio.svg"
+  },
+  {
+    "slug": "mindforge",
+    "title": "MindForge",
+    "tagline": "Interactive learning & productivity platform",
+    "description": "A TypeScript application focused on structured learning workflows, built with scalable component architecture and clean state management.",
+    "architecture": "Component-driven React SPA with typed API contracts",
+    "tech": {
+      "frontend": ["TypeScript", "React"],
+      "backend": ["Node.js"],
+      "database": ["MongoDB"]
+    },
+    "github": "https://github.com/Aryanxx4/MindForge",
+    "liveUrl": null,
+    "featured": true,
+    "image": "/projects/mindforge.svg"
+  },
+  {
+    "slug": "ecom-clone",
+    "title": "Ecom Clone",
+    "tagline": "Full-stack e-commerce experience",
+    "description": "An e-commerce clone with server-rendered views, cart flows, and product catalog management using Node.js and EJS templates.",
+    "architecture": "Express server + EJS views + session-based cart",
+    "tech": {
+      "frontend": ["EJS", "CSS", "JavaScript"],
+      "backend": ["Node.js", "Express"],
+      "database": ["MongoDB"]
+    },
+    "github": "https://github.com/Aryanxx4/Ecom-clone",
+    "liveUrl": null,
+    "featured": true,
+    "image": "/projects/ecom.svg"
+  },
+  {
+    "slug": "disease-detection",
+    "title": "Disease Detection",
+    "tagline": "ML-powered health screening web app",
+    "description": "A web interface for a disease detection model, combining machine learning inference with an accessible frontend for user uploads and results.",
+    "architecture": "Flask/Python ML backend + responsive web frontend",
+    "tech": {
+      "frontend": ["HTML", "CSS", "JavaScript"],
+      "backend": ["Python", "Flask"],
+      "database": []
+    },
+    "github": "https://github.com/Aryanxx4/Disease-Detection-Model-Website",
+    "liveUrl": null,
+    "featured": true,
+    "image": "/projects/disease.svg"
+  },
+  {
+    "slug": "n-body",
+    "title": "N-Body Simulation",
+    "tagline": "High-performance physics simulation",
+    "description": "A C++ N-body gravitational simulation exploring efficient numerical methods and real-time visualization of multi-body dynamics.",
+    "architecture": "C++ simulation core with optimized force calculations",
+    "tech": {
+      "frontend": [],
+      "backend": ["C++"],
+      "database": []
+    },
+    "github": "https://github.com/Aryanxx4/N-Body-Simulation-",
+    "liveUrl": null,
+    "featured": true,
+    "image": "/projects/nbody.svg"
+  }
+]

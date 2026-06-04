@@ -1,0 +1,38 @@
+[
+  {
+    "id": "dtu",
+    "type": "education",
+    "title": "B.Tech Computer Science",
+    "organization": "Delhi Technological University (DTU)",
+    "period": "2022 — Present",
+    "description": "Coursework in data structures, algorithms, databases, and software engineering with a focus on building production-ready web systems.",
+    "highlights": [
+      "Building full-stack projects across React, Node.js, and Python ecosystems",
+      "Exploring systems programming and applied machine learning"
+    ]
+  },
+  {
+    "id": "aims-project",
+    "type": "project",
+    "title": "AIMS — Academic Information Management System",
+    "organization": "Personal / Academic Project",
+    "period": "2025",
+    "description": "Led development of an institute management platform for student records, exams, subject mapping, and faculty modules.",
+    "highlights": [
+      "JWT-authenticated REST API with role-based access",
+      "React dashboard with modular faculty and student workflows"
+    ]
+  },
+  {
+    "id": "safefolio",
+    "type": "project",
+    "title": "Safefolio",
+    "organization": "Personal Project",
+    "period": "2025",
+    "description": "Designed and deployed a TypeScript web application with a production Vercel deployment.",
+    "highlights": [
+      "End-to-end TypeScript stack",
+      "Live demo at safefolio-tau.vercel.app"
+    ]
+  }
+]

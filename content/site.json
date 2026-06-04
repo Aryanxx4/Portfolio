@@ -1,0 +1,15 @@
+{
+  "name": "Aryan Choudhary",
+  "title": "Full Stack Developer",
+  "tagline": "I build end-to-end web products — APIs, databases, and interfaces.",
+  "bio": "Computer Science student at Delhi Technological University (DTU), passionate about building efficient systems and shipping full-stack applications from concept to deployment.",
+  "location": "New Delhi, India",
+  "email": "aryan.choudhary@example.com",
+  "resumeUrl": "/resume.pdf",
+  "socials": {
+    "github": "https://github.com/Aryanxx4",
+    "linkedin": "https://www.linkedin.com/in/aryan-choudhary-979b8718a",
+    "instagram": "https://www.instagram.com/_aryanxx4"
+  },
+  "githubUsername": "Aryanxx4"
+}
